@@ -5,7 +5,7 @@ Starter repository for your Angular workshop at the University.
 
 In this repository, you will create your Angular project that will evolve throughout the week.
 
-Please update this README by adding your name, the progress of your project, and any difficulties or bonuses you have encountered beyond the given requirements.
+
 
 If you are using GitHub Codespaces, npm, node, and angular/CLI are already installed in your virtual machine.
 To clone this repository locally, follow these steps:
