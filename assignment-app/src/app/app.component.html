@@ -1,0 +1,29 @@
+
+<mat-toolbar style="background-color: blueviolet">
+  <mat-toolbar-row>
+    <button mat-button (click)="opened=!opened"><mat-icon><a>menu</a></mat-icon></button>
+    <button mat-button routerLink="/home"><mat-icon ><a>home</a></mat-icon></button>
+    <button mat-button routerLink="/login" routerLinkActive="active" *ngIf="!authService.isLogged()" style="background-color: cornflowerblue" >s'identifier</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="side">
+    <ul>
+      <li><a routerLink="/home"><button class="link-btn"> Liste des devoirs </button></a></li>
+      <mat-divider></mat-divider>
+      <li><a routerLink="/add"><button class="link-btn">Ajout d'un devoir</button></a></li>
+      <mat-divider></mat-divider>
+      <li><button class="link-btn">Modification d'un devoir</button></li>
+      <mat-divider></mat-divider>
+      <li> <button class="link-btn">Supression d'un devoir</button></li>
+      <mat-divider></mat-divider>
+      <li><button class="link-btn">Génération de donné de test</button></li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

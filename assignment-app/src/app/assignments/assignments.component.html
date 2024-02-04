@@ -1,0 +1,35 @@
+
+<main class="container">
+
+  <div class="ajouterBtn">
+    <a routerLink="/add">
+      <button mat-flat-button color="accent">
+        Ajouter assignment
+      </button>
+    </a>
+  </div>
+
+  @for (assignment of assignments; track assignment.nom) {
+    <mat-list>
+      <nav><a routerLink="/assignment/{{assignment.id}}">
+        <h3 mat-subheader>{{assignment.dateDeRendu | date}}</h3>
+        <mat-list-item>
+          @if (assignment.rendu) {
+            <p appRendu>
+              Le devoir {{assignment.nom}} est à rendre avant le {{assignment.dateDeRendu | date }},
+              et a été rendu.
+            </p>
+          }
+          @else {
+            <p>
+              Le devoir {{assignment.nom}} est à rendre avant le {{assignment.dateDeRendu | date }},
+              et n'a pas été rendu.
+            </p>
+          }
+
+        </mat-list-item>
+      </a></nav>
+      <mat-divider></mat-divider>
+    </mat-list>
+  }
+</main>
